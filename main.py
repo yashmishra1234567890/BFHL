@@ -15,9 +15,6 @@ def main():
     print(f"Email: {email}")
    
     
-   
-    print("\nStep 1: Generating webhook and access token...")
-    
     gen_response = requests.post(
         "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/PYTHON",
         json={
@@ -55,7 +52,6 @@ def main():
     print(f"\nYou are assigned: {question}")
     print("Question Link:", question_link)
     
-    print("\nStep 3: Reading SQL solution from file...")
     
     try:
         with open("solution.sql", "r") as file:
@@ -70,13 +66,10 @@ def main():
     print(final_sql_query)
     print("-" * 50)
     
-  
     if not final_sql_query or "your_table" in final_sql_query:
         print("\nPlease update 'solution.sql' with your actual SQL solution.")
         return
 
- 
-    print("\nStep 4: Submitting your final SQL solution...")
     
     test_response = requests.post(
         "https://bfhldevapigw.healthrx.co.in/hiring/testWebhook/PYTHON",
